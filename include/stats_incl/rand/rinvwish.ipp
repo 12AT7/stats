@@ -25,7 +25,7 @@
 template<typename mT, typename pT, typename not_arma_mat<mT>::type*>
 statslib_inline
 mT
-rinvwish(const mT& Psi_par, const pT nu_par, rand_engine_t& engine, const bool pre_inv_chol)
+rinvwish(const mT& Psi_par, const pT nu_par, const bool pre_inv_chol)
 {
     typedef return_t<pT> eT;
     const ullint_t K = mat_ops::n_rows(Psi_par);
@@ -38,6 +38,8 @@ rinvwish(const mT& Psi_par, const pT nu_par, rand_engine_t& engine, const bool p
     }
 
     //
+
+    rand_engine_t& engine = stats::default_engine;
 
     mT A;
     mat_ops::zeros(A,K,K);

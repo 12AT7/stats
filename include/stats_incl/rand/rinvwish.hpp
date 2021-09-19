@@ -40,7 +40,7 @@
 
 template<typename mT, typename pT, typename not_arma_mat<mT>::type* = nullptr>
 statslib_inline
-mT rinvwish(const mT& Psi_par, const pT nu_par, rand_engine_t& engine, const bool pre_inv_chol = false);
+mT rinvwish(const mT& Psi_par, const pT nu_par, const bool pre_inv_chol = false);
 
 // specializations
 #ifdef STATS_ENABLE_ARMA_WRAPPERS

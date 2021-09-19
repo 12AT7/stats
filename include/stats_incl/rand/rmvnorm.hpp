@@ -41,7 +41,7 @@
 // vector draw
 template<typename vT, typename mT, typename not_arma_mat<mT>::type* = nullptr>
 statslib_inline
-vT rmvnorm(const vT& mu_par, const mT& Sigma_par, rand_engine_t& engine, const bool pre_chol = false);
+vT rmvnorm(const vT& mu_par, const mT& Sigma_par, const bool pre_chol = false);
 
 /**
  * @brief Random sampling function for the Multivariate-Normal distribution

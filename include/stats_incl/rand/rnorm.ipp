@@ -67,8 +67,7 @@ statslib_inline
 common_return_t<T1,T2>
 rnorm(const T1 mu_par, const T2 sigma_par, const ullint_t seed_val)
 {
-    rand_engine_t engine(seed_val);
-    return rnorm(mu_par,sigma_par,engine);
+    return rnorm(mu_par,sigma_par,stats::default_engine);
 }
 
 template<typename T>
@@ -111,7 +110,7 @@ statslib_inline
 void
 rnorm_mat_check(mT& X, const T1 mu_par, const T2 sigma_par, rand_engine_t& engine_0)
 {
-    MAIN_MAT_RAND_DIST_FN(rnorm,mu_par,sigma_par,engine_0);
+    MAIN_MAT_RAND_DIST_FN(rnorm,mu_par,sigma_par);
 }
 #endif
 

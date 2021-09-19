@@ -75,6 +75,16 @@ namespace stats
 
     using rand_engine_t = STATS_RNG_ENGINE_TYPE;
 
+	static struct default_engine_t {
+		void seed(const ullint_t seed_val=1776) { get_engine() = rand_engine_t(seed_val); }
+		operator rand_engine_t&() { return get_engine(); } 
+		private:
+			rand_engine_t& get_engine() {
+				static rand_engine_t engine(std::random_device{}());
+				return engine;
+			}
+	} default_engine;
+
     namespace GCINT = gcem::internal;
 
     template<class T>
